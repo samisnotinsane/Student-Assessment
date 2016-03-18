@@ -2,7 +2,6 @@ BEGIN
 FOR c IN (SELECT table_name FROM user_tables) LOOP
 EXECUTE IMMEDIATE ('DROP TABLE ' || c.table_name || ' CASCADE CONSTRAINTS');
 END LOOP;
-END;
 
 echo "Dropped all tables currently present. Moving onto recreation.";
 
@@ -68,3 +67,5 @@ CREATE TABLE QUESTION(
 	EXAM_ID FOREIGN KEY REFERENCES EXAM(EXAM_ID) NUMBER(10),
 	LECTURER_ID FOREIGN KEY REFERENCES LECTURER(LECTURER_ID) NUMBER(10);
 );
+
+END;
