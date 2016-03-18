@@ -1,4 +1,9 @@
-DROP ALL;
+BEGIN
+for i in (select * from tabs) loop
+execute immediate ('drop table ' || i.table_name || ' cascade constraints');
+end loop;
+end;
+/
 
 CREATE TABLE STUDENT(
 	STUDENT_ID INTEGER(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
