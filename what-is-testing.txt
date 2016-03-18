@@ -1,0 +1,7 @@
+What is involved in database testing?
+
+Two types:
+
+1. Clearbox testing: test stored views, constraints, referential integrities
+
+2. Blackbox testing: data values being stored/retrieved.
