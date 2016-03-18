@@ -1,0 +1,7 @@
+CREATE TABLE Subject
+	SUBJECT_ID INTEGER(10),
+	Name VARCHAR(20),
+	Description VARCHAR(255),
+	Semester INTEGER(2);
+
+
