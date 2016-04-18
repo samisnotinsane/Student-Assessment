@@ -1,0 +1,3 @@
+NAME="Algorithms and Data Structures in an Object-Oriented Framework"
+DESCRIPTION="The module builds on your introductory study of programming in the first year and spends some time revising and looking more deeply at the principles of object-oriented programming. It concentrates on programming with simple collections of data."
+SEMESTER="1"
