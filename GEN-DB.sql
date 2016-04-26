@@ -30,6 +30,8 @@ CREATE TABLE SUBJECT(
         SEMESTER NUMBER(2) NOT NULL
 );
 
+PROMPT Subject table created.
+
 CREATE SEQUENCE Subject_seq START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER Subject_seq_tr
@@ -38,6 +40,9 @@ BEGIN
 SELECT Subject_seq.NEXTVAL INTO :NEW.SUBJECT_ID FROM DUAL;
 END;
 /
+
+PROMPT Subject sequence created.
+
 -- End subject block
 
 --Block to create the student table
@@ -50,6 +55,8 @@ CREATE TABLE STUDENT(
         SUBJECT_ID REFERENCES SUBJECT(SUBJECT_ID)
 );
 
+PROMPT Student table created.
+
 CREATE SEQUENCE Student_seq START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER Student_seq_tr
@@ -58,6 +65,8 @@ BEGIN
 SELECT Student_seq.NEXTVAL INTO :NEW.STUDENT_ID FROM DUAL;
 END;
 /
+
+PROMPT Student sequence created.
 
 --End student block
 
@@ -69,6 +78,8 @@ CREATE TABLE COURSEWORK(
         MAX_MARK NUMBER(10) NOT NULL
 );
 
+PROMPT Coursework table created.
+
 CREATE SEQUENCE CW_seq START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER CW_seq_tr
@@ -77,6 +88,9 @@ BEGIN
 SELECT CW_seq.NEXTVAL INTO :NEW.COURSEWORK_ID FROM DUAL;
 END;
 /
+
+PROMPT Coursework sequence created.
+
 --End the CW block
 
 --Block to create the CWR table
@@ -85,6 +99,10 @@ CREATE TABLE COURSEWORKRESULT(
         STUDENT_ID REFERENCES STUDENT(STUDENT_ID),
         COURSEWORK_ID REFERENCES COURSEWORK(COURSEWORK_ID)
 );
+
+PROMPT Coursework result table created.
+PROMPT No CWR sequence.
+
 --End CWR block
 
 --Block to create the Lecturer table
@@ -98,6 +116,8 @@ CREATE TABLE LECTURER(
         COURSEWORK_ID REFERENCES COURSEWORK(COURSEWORK_ID)
 );
 
+PROMPT Lecturer table created.
+
 CREATE SEQUENCE Lec_seq START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER Lec_seq_tr
@@ -106,6 +126,9 @@ BEGIN
 SELECT Lec_seq.NEXTVAL INTO :NEW.LECTURER_ID FROM DUAL;
 END;
 /
+
+PROMPT Lecturer sequence created.
+
 --End lecturer block
 
 --Block to create exam table
@@ -117,6 +140,8 @@ CREATE TABLE EXAM(
         SUBJECT_ID REFERENCES SUBJECT(SUBJECT_ID)
 );
 
+PROMPT Exam table created.
+
 CREATE SEQUENCE Exam_seq START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER Exam_seq_tr
@@ -125,6 +150,9 @@ BEGIN
 SELECT Exam_seq.NEXTVAL INTO :NEW.EXAM_ID FROM DUAL;
 END;
 /
+
+PROMPT Exam sequence created.
+
 --End exam block
 
 --Block to create EXR table
@@ -133,6 +161,10 @@ CREATE TABLE EXAMRESULT(
         STUDENT_ID REFERENCES STUDENT(STUDENT_ID),
         EXAM_ID REFERENCES EXAM(EXAM_ID)
 );
+
+PROMPT Exam result table created.
+PROMPT No exam result sequence.
+
 --End EXR block
 
 --Block to create question table
@@ -145,6 +177,8 @@ CREATE TABLE QUESTION(
         LECTURER_ID REFERENCES LECTURER(LECTURER_ID)
 );
 
+PROMPT Question table created.
+
 CREATE SEQUENCE Q_seq START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER Q_seq_tr
@@ -153,6 +187,9 @@ BEGIN
 SELECT Q_seq.NEXTVAL INTO :NEW.QUESTION_ID FROM DUAL;
 END;
 /
+
+PROMPT Question sequence created.
+
 --End question block
 
 COMMIT;

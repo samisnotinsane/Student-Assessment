@@ -3,7 +3,7 @@ PROMPT Inserting new testing values into tables. Please stand by.
 
 
 INSERT INTO SUBJECT (NAME, DESCRIPTION, SEMESTER) VALUES ('Software Engineering', 'Intro to large scale programming projects.', 1);
-INSERT INTO SUBJECT (NAME, DESCRIPTION, SEMESTER) VALUES ('Internet Applications', 'Teaches the Internet 101.', 1);
+INSERT INTO SUBJECT (NAME, DESCRIPTION, SEMESTER) VALUES ('Internet Apps', 'Teaches the Internet 101.', 1);
 INSERT INTO SUBJECT (NAME, DESCRIPTION, SEMESTER) VALUES ('SoftEng Project', 'Student lead effort to create a software replica.', 2);
 INSERT INTO SUBJECT (NAME, DESCRIPTION, SEMESTER) VALUES ('ISA', 'Basics of information systems and their handling.', 2);
 
