@@ -4,5 +4,7 @@
 
  SELECT STUDENT.First_Name, STUDENT.Last_Name
  FROM Lecturer l, Subject sub, Student stu, ExamResult e
- WHERE l.First_Name="Matthew", l.Last_Name="Huntbach", sub.Name="ADSOOF",
- 		e.Mark_Achieved=60;
+ WHERE l.First_Name="Matthew"
+ AND l.Last_Name="Huntbach"
+ AND sub.Name="ADSOOF"
+ AND e.Mark_Achieved=60;
