@@ -10,8 +10,25 @@ ORDER BY Name;
 Expected Result:
 NAME
 -----------------------------------------
+Frank Brown
 Jonny Brown
 Tommy Gunn
+
+---------------------
+Display all subjects
+---------------------
+SELECT NAME, SEMESTER
+FROM SUBJECT
+ORDER BY NAME;
+
+Expected result:
+NAME		         SEMESTER
+-------------------- ----------
+ISA			      			 2
+Internet Apps		      	 1
+Logic			             1
+SoftEng Project 	         2
+Software Engineering	     1
 
 ----------------------------------------------------------------------
 All students with the last name 'Brown' on the course 'Internet Apps'
@@ -46,3 +63,4 @@ Software Engineering 	Tommy Gunn 				       	   40				40
 Internet Apps	     	Juan Cena					       44				50
 
 SoftEng Project      	Caesar Rome				           90				100
+
