@@ -1,0 +1,48 @@
+Queries
+-----------------------
+Any students in year 2 and ordered by their names.
+-----------------------
+SELECT FIRST_NAME ||' '|| LAST_NAME AS Name
+FROM STUDENT
+WHERE YEAR = 2
+ORDER BY Name;
+
+Expected Result:
+NAME
+-----------------------------------------
+Jonny Brown
+Tommy Gunn
+
+----------------------------------------------------------------------
+All students with the last name 'Brown' on the course 'Internet Apps'
+----------------------------------------------------------------------
+SELECT STUDENT.FIRST_NAME ||' '|| STUDENT.LAST_NAME AS Name
+FROM STUDENT, SUBJECT
+WHERE STUDENT.SUBJECT_ID = SUBJECT.SUBJECT_ID
+AND STUDENT.LAST_NAME = 'Brown'
+AND SUBJECT.NAME = 'Internet Apps';
+
+Expected Result:
+NAME
+-----------------------------------------
+James Brown
+Jonny Brown
+
+-------------------------------------------------------------
+Select all students who got a mark >= 80% for their subjects
+-------------------------------------------------------------
+SELECT SUBJECT.NAME AS Subject, STUDENT.FIRST_NAME || ' ' || STUDENT.LAST_NAME AS Name, EXAMRESULT.MARK_ACHIEVED AS Mark, EXAM.TOTAL_MARK AS TotalMark
+FROM STUDENT
+INNER JOIN EXAMRESULT ON EXAMRESULT.STUDENT_ID = STUDENT.STUDENT_ID
+INNER JOIN EXAM ON EXAM.EXAM_ID = EXAMRESULT.EXAM_ID
+INNER JOIN SUBJECT ON SUBJECT.SUBJECT_ID = EXAM.SUBJECT_ID
+WHERE ((EXAMRESULT.MARK_ACHIEVED / EXAM.TOTAL_MARK)*100) >= 80;
+
+Expected Result:
+SUBJECT 	     		NAME					  MARK			  TOTALMARK
+---------------------  ------------------------- --------------  ---------------
+Software Engineering 	Tommy Gunn 				       	   40				40
+
+Internet Apps	     	Juan Cena					       44				50
+
+SoftEng Project      	Caesar Rome				           90				100
