@@ -1,0 +1,15 @@
+>>>VIEW 1 (Student subject):
+
+A list of students who achieved over 40 in subject 'Object Oriented Programming'
+
+>>>VIEW 2 (All students in year 2):
+
+Shows a list of names of students who are in their 2nd year (undergrad).
+
+>>>VIEW 3 (Students under lecturer 'Matthew Huntback'):
+
+Shows a list of students who are taught by a certain lecturer
+
+>>>VIEW 4 (Resit students):
+
+A list of students who have done resits.

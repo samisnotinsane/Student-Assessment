@@ -1,0 +1,4 @@
+STUDENT:
+FIRST_NAME="Andrew"
+LAST_NAME="Smith"
+YEAR=2
