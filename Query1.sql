@@ -1,0 +1,4 @@
+SET TERMOUT ON
+PROMPT "Executing query 1";
+
+INSERT INTO

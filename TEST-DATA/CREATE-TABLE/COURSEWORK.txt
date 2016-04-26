@@ -1,2 +1,4 @@
 COURSEWORK:
 MAX_MARK: 15
+
+INSERT INTO coursework WHERE Subject_ID = 3, 
