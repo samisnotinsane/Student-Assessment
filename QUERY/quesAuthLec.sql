@@ -1,12 +1,9 @@
-/* Find the number of questions that was authored by the same lecturer.*/
+/* Find the number of questions that was authored by someone called 
+ * Smith who happens to be a lecturer.*/
 
-
-/* Find all lecturers appointed to a subject that has no enrolled students */
-SELECT l.LECTURER_ID as "Lecturer ID", l.TITLE as "Title", l.LAST_NAME as "Last name"
-FROM LECTURER l
-WHERE l.subject_id = (
-	SELECT subject_id 
-	FROM Subject su
-	WHERE NOT EXISTS (SELECT subject_id
-					  FROM Student st
-					  WHERE st.subject_id = su.subject_id));
+SELECT COUNT(q.question_id) as "Questions authored by lecturer"
+FROM Question q
+WHERE q.Author LIKE '%Smith%'
+AND q.lecturer_id = (SELECT lecturer_id
+					 FROM Lecturer l
+					 WHERE l.Last_Name LIKE '%Smith%');
