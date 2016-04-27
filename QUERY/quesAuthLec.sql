@@ -1,5 +1,5 @@
 /* Find the number of questions that was authored by someone called 
- * Smith who happens to be a lecturer.*/
+ * Smith who shares their surname with a lecturer.*/
 
 SELECT COUNT(q.question_id) as "Questions authored by lecturer"
 FROM Question q
